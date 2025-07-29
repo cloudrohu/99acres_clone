@@ -93,26 +93,29 @@
 
 <!-- Find Properties In the Locality Start Here -->
 	
-<!-- Loader -->
-<div id="pageLoader" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500">
-  <div class="text-center">
+<!-- Stylish Page Loader -->
+<div id="pageLoader" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-700 ease-in-out backdrop-blur-md">
+  <div class="text-center animate-fade-in">
     {% for rs in setting %}
-      <div class="text-4xl font-bold text-gray-800 animate-pulse">{{ rs.copy_right }}</div>
+      <div class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 animate-glow drop-shadow-lg">
+        {{ rs.copy_right }}
+      </div>
     {% endfor %}
-    <p class="text-sm text-gray-500 mt-2">Loading...</p>
+    <p class="text-sm text-gray-500 mt-2 animate-pulse tracking-wide">Loading please wait...</p>
   </div>
 </div>
 
-
+<!-- Loader Hide Script -->
 <script>
   window.addEventListener("load", () => {
     const loader = document.getElementById("pageLoader");
     setTimeout(() => {
       loader.classList.add("opacity-0");
       setTimeout(() => loader.style.display = "none", 500);
-    }, 2000); // 1.5 seconds delay
+    }, 2000); // delay for 2 seconds
   });
 </script>
+
 
 
 
