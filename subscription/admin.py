@@ -1,6 +1,7 @@
 import admin_thumbnails
 from django.contrib import admin
 
+
 # Register your models here.
 from mptt.admin import DraggableMPTTAdmin
 from .models import *
